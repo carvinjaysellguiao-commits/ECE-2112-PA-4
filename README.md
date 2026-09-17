@@ -1,7 +1,7 @@
 # ECE-2112-PA-4
 Made by Carvin Jaysell D. Guiao | 2ECE-D
 <br>
-This programming assignment focuses on datasets using Pandas and a Python plotting library in Jupyter Notebook.
+This programming assignment focuses on using Pandas and a Python plotting library within a Jupyter Notebook environment. It explains that the task involves working with datasets and performing data analysis and visualization using Python tools.
 
 ## Set Up
 ```python
@@ -12,8 +12,10 @@ df = pd.read_excel("board2.xlsx")
 df.head()
 ```
 
+This cell imports the required libraries using ``import pandas as pd`` and ``import matplotlib.pyplot as plt``. Pandas is used for handling and analyzing tabular data, while Matplotlib is used for creating visualizations such as bar charts. The following cell loads the dataset using ``pd.read_excel()`` and stores it in the DataFrame ``df``. The function ``df.head()`` is used to display the first few rows to verify that the data and column names are correctly loaded.
+
 ## A. Visayas Communication Dataframe
-This problem focuses on applying multiple logical conditions to isolate a specific subset of student records. In this problem, we are tasked to filter the datasets for Visayas students in the communication track, retaining only the five specific columns, and display the resulting DataFrame with its row count.
+This problem focuses on applying multiple logical conditions to isolate a specific subset of student records. In this problem, we are tasked with filtering the dataset for Visayas students in the communication track, retaining only the five specific columns, and displaying the resulting DataFrame with its row count.
 ```python
 VisComm = df[
     (df["Hometown"] == "Visayas") &
@@ -23,9 +25,9 @@ VisComm = df[
 print(VisComm)
 print("Number of rows:", len(VisComm))
 ```
-
+This cell filters the dataset using conditions with ``(df["Hometown"] == "Visayas") & (df["Track"] == "Communication")``. It then selects specific columns using double brackets ``[[...]]`` to create the ``VisComm`` DataFrame. The results are displayed using ``print()`` and counted using ``len()``.
 ## B. Visayas Female Dataframe
-This task demonstrates two-steps data wrangling by first generating a secondary filtered DataFrame based on demographic criteria and subsequently applying numerical threshold without altering the main subject. We are tasked to extract female students from Visayas into a ``VisFemale`` DataFrame with specified column and display a secondary filtered view of records where ``Average`` is at least 60 without altering the original subset.
+This task demonstrates two-step data wrangling by first generating a secondary filtered DataFrame based on demographic criteria and subsequently applying a numerical threshold without altering the main subject. We are tasked with extracting female students from Visayas into a ``VisFemale`` DataFrame with specified columns and displaying a secondary filtered view of records where ``Average`` is at least 60 without altering the original subset.
 ```python
 VisFemale = df[
     (df["Hometown"] == "Visayas") &
@@ -34,11 +36,12 @@ VisFemale = df[
 
 print(VisFemale)
 ```
-
+This cell creates the VisFemale DataFrame by filtering with ``(df["Hometown"] == "Visayas") & (df["Gender"] == "Female")``. It keeps only selected columns using column indexing with ``[[...]]``. The resulting DataFrame is displayed using ``print()``.
 ```python
 VisFemale_60 = VisFemale[VisFemale["Average"] >= 60]
 print(VisFemale_60)
 ```
+This cell applies an additional condition using ``VisFemale["Average"] >= 60`` to filter the data. The result is stored in a new DataFrame ``VisFemale_60`` to avoid modifying the original.
 
 ## C. Category-Average Visualization
 This section deals with exploratory data analysis and data visualization, aggregating board exam averages across different demographic and academic categories to present comparative insights visually. We are required to calculate the summary tables for the mean ``Average`` across Track, Gender, and Hometown - plot these in a three-bar-chart figure and state the highest sample mean category for each feature.
@@ -51,7 +54,7 @@ print(track_avg)
 print(gender_avg)
 print(hometown_avg)
 ```
-
+This cell computes group averages using ``groupby()`` and ``mean()`` on the column <b>"Average"</b>. It creates summaries for <b>Track, Gender, and Hometown</b> stored in separate variables.
 
 ```python
 plt.figure(figsize=(12, 4))
@@ -90,8 +93,16 @@ plt.show()
 ```
 This code automatically adjusts spacing between subplots and displays the complete figure. It ensures that titles, labels, and plots do not overlap and are clearly visible.
 
+```python
+print("1. The track with the highest average score is ", track_avg.idxmax())
+print("2. The gender with the highest average score is ", gender_avg.idxmax())
+print("3. The hometown group with the highest average score is ", hometown_avg.idxmax())
+```
+This cell identifies the category with the highest average score for each of the three features: <b>Track, Gender, and Hometown</b>. The ``idxmax()`` function is used to determine which category has the maximum mean value.
+<br>
 <br>
 Thank you for reading!
+<br>
 To check the notebook output, kindly click [here](). Thank you!
 
 #### README Version History
@@ -99,3 +110,5 @@ To check the notebook output, kindly click [here](). Thank you!
 September 15, 2026 - README Upload and Draft
 <br>
 September 15, 2026 - Update
+<br>
+September 16, 2026 - Finalization and Notebook Upload
