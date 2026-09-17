@@ -103,7 +103,7 @@ This cell identifies the category with the highest average score for each of the
 <br>
 Thank you for reading!
 <br>
-To check the notebook output, kindly click [here](http://localhost:8888/files/Programming%20Assignments/Programming%20Assignment%204_GUIAO%2CCJ.ipynb?_xsrf=2%7C45e55d6c%7Cc0efecbc3aedd362b8d648a0636eb402%7C1789647780). Thank you!
+To check and download the notebook output, kindly click [Programming Assignment 4](http://localhost:8888/files/Programming%20Assignments/Programming%20Assignment%204_GUIAO%2CCJ.ipynb?_xsrf=2%7C45e55d6c%7Cc0efecbc3aedd362b8d648a0636eb402%7C1789647780). Thank you!
 
 #### README Version History
 <br>
